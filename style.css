@@ -1,0 +1,88 @@
+/**********  ESTILOS PARA DISPOSITIVOS MOVILES  **********/
+
+/** GENERALES **/
+*,::after,::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+/** FIN GENERALES **/
+/** LAYOUT **/
+/*GRID*/
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr  1fr  1fr  1fr;
+    grid-template-areas: 
+    " header  "
+    " article--msg "
+    " section "
+    " article--res "
+    ;
+}
+.header{
+    grid-area: header;
+}
+.article--msg{
+    grid-area: article--msg;
+}
+.section{
+    grid-area: section; 
+}
+.article--res{
+    grid-area: article--res; 
+}
+/*FIN GRID*/
+
+/*FLEX BOX*/
+
+/*FIN FLEX BOX*/
+
+/** FIN LAYOUT **/
+
+
+/********** ESTILOS PARA DISPOSITIVOS TABLETS **********/
+  
+/* Media query para tabletas (ejemplo: ancho máximo de 768px) */
+@media (min-width: 768px) {
+    body {      
+        background-color: green;
+    }
+
+}
+  
+/********** ESTILOS PARA DISPOSITIVOS ESCRITORIO **********/
+
+/* Media query para pantallas de escritorio (ejemplo: ancho mínimo de 1024px) */
+@media (min-width: 1024px) {
+    body {       
+        background-color: blue;
+    }
+
+    /** LAYOUT **/    
+    /*GRID*/
+        .grid-container{
+            display: grid;
+            grid-template-columns: 0.3fr 0.3fr  2fr  4fr  4fr 0.5fr  5fr  0.3fr;
+            grid-template-rows: 0.3fr  1fr  4.5fr  4.5fr  2fr  0.3fr;
+            grid-template-areas: 
+            "   .     .       .       .                .               .          .                  .   "
+            "   .     .       header  header           header          .          article--res       .   "
+            "   .     .       .       article--msg     article--msg    .          article--res       .   "
+            "   .     .       .       article--msg     article--msg    .          article--res       .   "
+            "   .     .       .       section          section          .         article--res       .   "
+            "   .     .       .       .                .               .          .                  .   "
+            ;
+        }
+        
+    /*FIN GRID*/
+    /*FLEX BOX*/
+    /*FIN FLEX BOX*/
+    /** LAYOUT **/  
+
+}
