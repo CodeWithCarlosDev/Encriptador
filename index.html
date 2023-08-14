@@ -7,10 +7,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="body grid-container">   
-    <header class="header"> L </header>
-    <article class="article article--msg">M</article>
-    <section class="section">B</section>
-    <article class="article article--resp">R</article>
+
+    <header class="header grid-items"> 
+        <img class="header__img" src="vector.png" alt=""> 
+    </header>
+
+    <article class="article  article--msg grid-items">
+        <p class="article__p">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci montes, sit et diam risus scelerisque 
+            vitae est. Tortor maecenas nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit elit. 
+            Libero, sodales duis fames id diam feugiat aliquet non egestas.       
+        </p> 
+    </article>
+
+    <section class="section grid-items flex-content flex-content--column flex-content--space-between">
+        <p class="section__p">                
+            <img class="section__img" src="bi_exclamation-circle-fill.png" alt="" srcset="">  
+            <span class="section__span">Solo letras minúsculas y sin acentos</span>
+        </p>
+        <div class="section__div flex-content flex-content--column flex-content--space-between">
+            <button class="section__button  button flex-items">Encriptar</button>
+            <button class="section__button  button flex-items">Desencriptar</button>
+        </div> 
+    </section>
+
+    <article class="article  article--res grid-items">
+        <div class="article__div flex-content flex-content--column flex-content--space-between">
+            <p class="article__p">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci montes, sit et diam risus scelerisque 
+                vitae est. Tortor maecenas nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit elit. 
+                Libero, sodales duis fames id diam feugiat aliquet non egestas.       
+            </p>
+            <button class="article__button  button">Copiar</button>
+        </div> 
+    </article>
+
 </body>
 </html>
 
