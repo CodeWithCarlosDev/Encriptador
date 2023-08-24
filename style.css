@@ -1,5 +1,26 @@
 /**************************  ESTILOS PARA DISPOSITIVOS MOVILES  **************************/
 /** GENERALES **/
+:root {
+	--body-bg-color:  rgb(243,245,252) ;
+	--article-div-bg-color: rgb(255,255,255);
+	--body-article-p-color:  rgb(10,56,113);
+	--body-article-p-color:  rgb(10,56,113);
+	--article-p-res-color:rgb(73,80,87);
+	--article-h1-res-color:rgb(52, 58, 64);
+	--section-span--desk-font-size:1vw;
+	--small-font-size:2.5vw;
+	--medium-font-size:3vw;
+	--large-font-size:6vw;
+	--btn-font-size:3.5vw;
+	--article-p-msg-small-font-size:8vw;
+	--article-p-msg-large-font-size:2.5vw;
+	--btn-desk-font-size:1vw;
+	--btn-bg-primary-color:rgb(10,56,113);
+	--btn-bg-secondary-color:rgb(216,223,232);
+	--btn-primary-color:rgb(255,255,255);
+	--btn-secondary-color:rgb(10,56,113);
+	--section__span--color:rgb(115,120,127)
+}
 *,
 ::after,
 ::before {
@@ -7,76 +28,110 @@
 	margin: 0;
 	box-sizing: border-box;
 }
-
 html,
 body {
 	width: 100%;
 	min-height: 100vh;
 	max-height: 100%;
+	background-color: var(--body-bg-color);
 }
-
 .body {
 	text-align: justify;
-	font-size: 6vw;
+	font-size: var(--large-font-size);
 	padding: 5.5% 3.5%;
 }
-
 .grid-items:nth-child(n + 2) {
 	padding-top: 10%;
 }
-
 /** SECTION Y ARTICLE-RES **/
 .button {
-	padding: 1em;
+	padding: 1.1em 1em;
 	/* padding: 4%; */
 	border-top-left-radius: 5% 40%;
 	border-bottom-left-radius: 5% 40%;
 	border-top-right-radius: 5% 40%;
 	border-bottom-right-radius: 5% 40%;
-	font-size: 3.5vw;
+	font-size: var(--btn-font-size);
 }
-
 /** FIN SECTION Y ARTICLE-RES **/
 /** FIN GENERALES **/
-
 /** HEADER **/
 /** FIN HEADER **/
-
-/** ARTICLE-MSG **/
-.article--msg {}
-
-/** FIN ARTICLE-MSG **/
-
 /** SECTION **/
+.section__p{
+	font-size:4vw ;
+}
+.section__img {
+    width: 4vw;
+}
 .section__div {
 	height: 100%;
-	padding-top: 5%;
+	padding-top: 5%;	
 }
-
+.section__button{
+	border: none;
+}
 .section__button:first-child {
 	margin-bottom: 5%;
 }
-
+.section__button--primary{
+	background-color: var(--btn-bg-primary-color);
+	color:var(--btn-primary-color);
+}
+.section__button--secondary{
+	background-color: var(--btn-bg-secondary-color);
+	color:var(--btn-secondary-color);
+	border: solid 1px #0A3871;
+}
+.section__span{
+	color:var(--section__span--color);
+}
+.section__button{
+	width: 100%;	
+}
 /** FIN SECTION **/
 
 /** ARTICLE-RES **/
 .article__div {
 	height: 100%;
-	/*  background-color: yellow; */
+	padding: 5% 5%;
+	background-color: var(--article-div-bg-color);
+	border-top-left-radius: 8% 5%;
+	border-bottom-left-radius: 8% 5%;
+	border-top-right-radius: 8% 5%;
+	border-bottom-right-radius: 8% 5%;
 }
-
-.article__button {
-	margin-bottom: 5%;
+.article__h1,.article__p--res{	
+	text-align: center;
 }
-
+.article__p--res-left{
+	text-align: left;
+}
+.article__p--res{
+	color:var(--article-p-res-color);	
+}
+.article__h1--res{
+	color:var(--article-h1-res-color);	
+}
+.article__div--input,.article__div--output{
+	padding: 0;
+}
 /** FIN ARTICLE-RES **/
-
+/** ARTICLE-MSG **/
+.article__p{
+	color:var(--body-article-p-color);
+}
+.article__p--msg{
+	text-align: left;
+	font-size: var(--article-p-msg-small-font-size);
+}
+/** FIN ARTICLE-MSG **/
 /** LAYOUT **/
 /*GRID*/
 .grid-container {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 0.1fr 1fr minmax(auto, .3fr) minmax(16.5em, 1fr);
+	grid-template-rows: 0.1fr minmax(auto, max-content) minmax(auto, max-content) minmax(16.5em, 1fr);
 	grid-template-areas:
 		" header  "
 		" article--msg "
@@ -84,46 +139,54 @@ body {
 		" article--res"
 	;
 }
-
 .grid-items {
-	border: solid 1px;
+	 border: solid 1px; 
 }
-
 .header {
 	grid-area: header;
 }
-
 .article--msg {
 	grid-area: article--msg;
 }
-
 .section {
 	grid-area: section;
 }
-
 .article--res {
 	grid-area: article--res;
 }
-
 /*FIN GRID*/
-
 /*FLEX BOX*/
 .flex-content {
 	display: flex;
 }
-
 .flex-content--column {
 	flex-direction: column;
 }
-
 .flex-content--space-between {
 	justify-content: space-between;
 }
-
 .flex-content--space-evenly {
 	justify-content: space-evenly;
 }
-
+/*******section*******/
+.section__p{
+	justify-content: flex-start;
+	align-items: center;
+	column-gap: 1%;
+}
+/*******fin section*******/
+/*** article--res***/
+.article__div--input {
+	justify-content: center;
+    align-items: center;
+    row-gap: 2%;
+}
+.article__img {
+	/*  width: 20vw;*/
+	max-width: 20vw;
+	min-width: 100%;
+}
+/*** fin article--res***/
 /*FIN FLEX BOX*/
 /** FIN LAYOUT **/
 
@@ -131,22 +194,17 @@ body {
 
 /* Media query para tabletas (ejemplo: ancho máximo de 768px) */
 @media (min-width: 768px) {
-
 	/** SECTION **/
 	.section__button:first-child {
 		margin: 0%;
 	}
-
+	.section__button {
+		width: 48%;
+	}
 	/** FIN SECTION **/
-
 	/** LAYOUT **/
 	/*GRID*/
-	.grid-container {
-		grid-template-rows: 0.1fr 2fr 0.75fr minmax(16.5em, 2.5fr);
-	}
-
 	/*FIN GRID*/
-
 	/*FLEX BOX*/
 	/** SECTION **/
 	.section__div {
@@ -154,47 +212,54 @@ body {
 		justify-content: space-between;
 		align-items: flex-end;
 	}
-
-	.flex-items {
-		width: 45%;
-	}
-
-	/** FIN SECTION **/
+    /** FIN SECTION **/
 	/*FIN FLEX BOX*/
 	/** LAYOUT **/
 }
-
 /************************** ESTILOS PARA DISPOSITIVOS ESCRITORIO **************************/
 
 /* Media query para pantallas de escritorio (ejemplo: ancho mínimo de 1024px) */
 @media (min-width: 1024px) {
-
 	/** GENERALES **/
 	.body {
 		font-size: 1.5vw;
 		padding: 0;
 	}
-
 	.button {
-		font-size: 0.7vw;
-		/*  padding: 2%;  */
+		font-size:var(--btn-desk-font-size);
 	}
-
 	/** FIN GENERALES **/
 
+	/***ARTICLE-MSG***/
+	.article__p--msg{
+		font-size: var(--article-p-msg-large-font-size);
+	}
+	/***FIN ARTICLE-MSG***/
 	/** SECTION **/
 	.section__div {
 		padding-top: 0;
-		align-items: center;
+		align-items: center;		
+		padding-bottom: 3.6%;
 	}
-
+	.section__p {
+		padding-bottom: 2%;
+	}
+	.section__span {		
+		font-size: var(--section-span--desk-font-size);
+	}
+	.section__button{
+		width: 49%;	
+	}
+	.section__img {
+		width: 1vw;
+	}
 	/** FIN SECTION **/
 
 	/** LAYOUT **/
 	/*GRID*/
 	.grid-container {
 		display: grid;
-		grid-template-columns: 0.2fr 0.2fr 1.5fr 2.5fr 2.5fr 0.6fr 3.5fr 0.3fr;
+		grid-template-columns: 0.2fr 0.2fr 1.5fr 2fr 1.5fr 0.6fr 1.7fr 0.3fr;
 		grid-template-rows: 0.1fr 0.2fr 1fr 1fr 0.41fr 0.1fr;
 		grid-template-areas:
 			"   .     .       .       .                .               .          .                  .   "
@@ -205,15 +270,11 @@ body {
 			"   .     .       .       .                .               .          .                  .   "
 		;
 	}
-
 	.grid-items:nth-child(n + 2) {
 		padding-top: 0;
 	}
-
 	/*FIN GRID*/
-
 	/*FLEX BOX*/
 	/*FIN FLEX BOX*/
 	/** LAYOUT **/
-
 }

@@ -13,32 +13,49 @@
     </header>
 
     <article class="article  article--msg grid-items">
+            
+        <p class="article__p article__p--msg">
+            Ingrese el texto aqui    
+        </p> 
+     <!-- 
         <p class="article__p">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci montes, sit et diam risus scelerisque 
             vitae est. Tortor maecenas nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit elit. 
             Libero, sodales duis fames id diam feugiat aliquet non egestas.       
         </p> 
+    -->
     </article>
 
     <section class="section grid-items flex-content flex-content--column flex-content--space-between">
-        <p class="section__p">                
+        <p class="section__p flex-content">                
             <img class="section__img" src="bi_exclamation-circle-fill.png" alt="" srcset="">  
             <span class="section__span">Solo letras minúsculas y sin acentos</span>
         </p>
         <div class="section__div flex-content flex-content--column flex-content--space-between">
-            <button class="section__button  button flex-items">Encriptar</button>
-            <button class="section__button  button flex-items">Desencriptar</button>
+            <button class="section__button  button flex-items section__button--primary">Encriptar</button>
+            <button class="section__button  button flex-items section__button--secondary">Desencriptar</button>
         </div> 
     </section>
 
     <article class="article  article--res grid-items">
-        <div class="article__div flex-content flex-content--column flex-content--space-between">
-            <p class="article__p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci montes, sit et diam risus scelerisque 
-                vitae est. Tortor maecenas nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit elit. 
-                Libero, sodales duis fames id diam feugiat aliquet non egestas.       
-            </p>
-            <button class="article__button  button">Copiar</button>
+        <div class="article__div    flex-content flex-content--column flex-content--space-between">
+     
+                <div class="article__div  article__div--input flex-content flex-content--column">
+                    <img src="persona.png" class="article__img" alt="img-persona-con-lupa"   />
+                    <h1 id="article__h1"  class="article__h1 article__h1--res">Ningun mensaje fue encontrado</h1>
+                    <p  id="article__p" class="article__p article__p--res ">Ingresa el texto que desees encriptar o desencriptar</p>
+                </div>
+           <!--            
+                <div class="article__div  article__div--output  flex-content flex-content--column flex-content--space-between">                  
+                    <p class="article__p article__p--res article__p--res-left">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci montes, sit et diam risus scelerisque 
+                        vitae est. Tortor maecenas nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit elit. 
+                        Libero, sodales duis fames id diam feugiat aliquet non egestas.       
+                    </p> 
+                    <button class="article__button  button">Copiar</button>
+                </div> 
+           -->      
+         
         </div> 
     </article>
 
