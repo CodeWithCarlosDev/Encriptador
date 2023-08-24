@@ -116,14 +116,22 @@ body {
 .article__div--input,.article__div--output{
 	padding: 0;
 }
-/** FIN ARTICLE-RES **/
-/** ARTICLE-MSG **/
 .article__p{
 	color:var(--body-article-p-color);
 }
-.article__p--msg{
+
+/** FIN ARTICLE-RES **/
+/** ARTICLE-MSG **/
+.article__textarea{
+	width: 100%;
+	height: 100%;
+	background-color: var(--body-bg-color);
+	color: var(--body-article-p-color);
+	border: none;
 	text-align: left;
-	font-size: var(--article-p-msg-small-font-size);
+	font-size: var(--article-p-msg-small-font-size);	
+	outline: none;
+	height: 40vh;
 }
 /** FIN ARTICLE-MSG **/
 /** LAYOUT **/
@@ -140,7 +148,7 @@ body {
 	;
 }
 .grid-items {
-	 border: solid 1px; 
+	/* border: solid 1px; */
 }
 .header {
 	grid-area: header;
@@ -231,8 +239,9 @@ body {
 	/** FIN GENERALES **/
 
 	/***ARTICLE-MSG***/
-	.article__p--msg{
+	.article__textarea{
 		font-size: var(--article-p-msg-large-font-size);
+		height: 100%;
 	}
 	/***FIN ARTICLE-MSG***/
 	/** SECTION **/
