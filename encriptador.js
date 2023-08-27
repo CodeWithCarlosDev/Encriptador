@@ -37,21 +37,34 @@ function transformText(input, map = {}) {
 
 // Función de manejo de eventos para encriptar
 function handleEncrypt() {
+    // Validaciones
     if (!textareaElement.value.trim()) {
+        alert("Ingresa un mensaje para encriptarlo o desencriptarlo.");
         return;
     }
-
-    const userInput = textareaElement.value.split(" ");
+    
+    // Convertir a minúsculas y dividir en palabras
+    const userInput = textareaElement.value.toLowerCase().split(" ");
     encryptedText = transformText(userInput, encryptionMap);
     displayText(encryptedText);
 }
 
 // Función de manejo de eventos para desencriptar
 function handleDecrypt() {
+    // Validaciones
     if (!encryptedText || !textareaElement.value.trim()) {
+        alert("Ingresa un mensaje para encriptarlo o desencriptarlo.");
         return;
     }
-
+    
+   // Convertir a minúsculas y dividir en palabras
+   const userInput = textareaElement.value.toLowerCase().split(" ");
+    // Validaciones
+    console.log(validateString(userInput))
+    if( !validateString(userInput) ){
+        alert("Para desencriptar un mensaje, primero necesitas haberlo encriptado previamente.")
+        return;
+    }
     decryptedText = transformText(encryptedText, decryptionMap);
     displayText(decryptedText);
 }
@@ -61,6 +74,18 @@ function handleCopy() {
     const message = document.getElementById("message");
     const textCopy = message.textContent;
     copyToClipboard(textCopy);
+}
+
+// Función para validar la desencriptación
+function validateString( userInput ){
+    const validatePhraseArray = encryptedText.map( item => item.join(""));
+    let isValid = true;
+    validatePhraseArray.forEach( (word,index) => {     
+        if(word.length != userInput[index].length ){
+            isValid = false
+        }  
+   });    
+   return isValid;
 }
 
 // Función para copiar al portapapeles
@@ -80,7 +105,6 @@ function displayText(arrayOfWords) {
     const secondaryDiv = document.getElementById("div-secundario");
     const messageElement = document.getElementById("message");
     const joinedText = arrayOfWords.map(word => word.join("")).join(" ");
-
     primaryDiv.classList.add("hidden");
     secondaryDiv.classList.remove("hidden");
     messageElement.textContent = joinedText;
