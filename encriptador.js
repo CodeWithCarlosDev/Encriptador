@@ -60,7 +60,6 @@ function handleDecrypt() {
    // Convertir a minúsculas y dividir en palabras
    const userInput = textareaElement.value.toLowerCase().split(" ");
     // Validaciones
-    console.log(validateString(userInput))
     if( !validateString(userInput) ){
         alert("Para desencriptar un mensaje, primero necesitas haberlo encriptado previamente.")
         return;
@@ -80,6 +79,9 @@ function handleCopy() {
 function validateString( userInput ){
     const validatePhraseArray = encryptedText.map( item => item.join(""));
     let isValid = true;
+    if(validatePhraseArray.length != userInput.length ){        
+        return false
+    }
     validatePhraseArray.forEach( (word,index) => {     
         if(word.length != userInput[index].length ){
             isValid = false
